@@ -1,4 +1,6 @@
-package TaskAllocation;
+package PoliceTaskAllocation;
+
+import TaskAllocation.Location;
 
 public class PatrolEvent extends Event {
 

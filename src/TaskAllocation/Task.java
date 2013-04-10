@@ -6,7 +6,6 @@ abstract public class Task {
 	protected Location location;
 	protected double duration;
 	protected double startTime;
-	protected double EndTime;
 	protected int id;
 	protected Vector<Agent> agents;
 	
@@ -19,13 +18,6 @@ abstract public class Task {
 		this.id = id;
 	}
 
-	public double getEndTime() {
-		return EndTime;
-	}
-
-	public void setEndTime(double endTime) {
-		EndTime = endTime;
-	}
 
 	public Location getLocation() {
 		return location;

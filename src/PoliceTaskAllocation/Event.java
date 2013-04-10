@@ -1,4 +1,7 @@
-package TaskAllocation;
+package PoliceTaskAllocation;
+
+import TaskAllocation.Location;
+import TaskAllocation.Task;
 
 public class Event extends Task {
 	protected double firstUnitTime;

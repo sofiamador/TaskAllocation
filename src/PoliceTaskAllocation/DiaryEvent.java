@@ -1,24 +1,21 @@
-package TaskAllocation;
+package PoliceTaskAllocation;
+
 
 
 public class DiaryEvent implements Comparable<DiaryEvent>{
 	//diary time, time when event appears or ends
-	private int time;
+	private double time;
 	
 	private MissionEvent event;
 	private boolean end;
-	private int unitArrivaTime;
-	private int unitsOnTheMission;
-	private double timeLeft;
 
 	
 	public DiaryEvent(MissionEvent ms) {
-		time=(int) ms.getArrivalTime();
-		timeLeft=ms.getDuration();
+		time=ms.getStartTime();
 		event=ms;
 		setEnd(false);
 	}
-	public int getTime() {
+	public double getTime() {
 		return time;
 	}
 	public void setTime(int time) {
@@ -34,26 +31,6 @@ public class DiaryEvent implements Comparable<DiaryEvent>{
 		return end;
 	}
 	
-	public int getUnitArrivaTime() {
-		return unitArrivaTime;
-	}
-	public void setUnitArrivaTime(int unitArrivaTime) {
-		this.unitArrivaTime = unitArrivaTime;
-		event.setArrivalTime(unitArrivaTime);
-	}
-	public int getUnitsOnTheMission() {
-		return unitsOnTheMission;
-	}
-	public void setUnitsOnTheMission(int unitsOnTheMission) {
-		this.unitsOnTheMission = unitsOnTheMission;
-	}
-	public double getTimeLeft() {
-		return timeLeft;
-	}
-	public void setTimeLeft(double d) {
-		this.timeLeft = d;
-		event.setDuration(d);
-	}
 
 	@Override
 	public int compareTo(DiaryEvent o) {
@@ -75,10 +52,14 @@ public class DiaryEvent implements Comparable<DiaryEvent>{
 	}
 	
 	public Object clone() {
-		DiaryEvent o=new DiaryEvent((MissionEvent) event.clone());
+		DiaryEvent o=new DiaryEvent(this.event);
 		o.setEnd(end);
 		o.setTime(time);
 		return o;		
+	}
+	private void setTime(double time2) {
+		time=time2;
+		
 	}
 	
 	

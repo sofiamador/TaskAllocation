@@ -1,4 +1,7 @@
-package TaskAllocation;
+package PoliceTaskAllocation;
+
+import TaskAllocation.Agent;
+import TaskAllocation.Location;
 
 public class PoliceUnit extends Agent {
 
